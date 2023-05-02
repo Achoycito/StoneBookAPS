@@ -20,6 +20,15 @@
       </a><!-- End Profile Iamge Icon -->
 
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" style="padding: 0;">
+       <li>
+          <a class="dropdown-item d-flex align-items-center" href="dashboard.php">
+            <i class="bi bi-activity"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li> 
         <li>
           <a class="dropdown-item d-flex align-items-center" href="logout.php">
             <i class="bi bi-box-arrow-right"></i>
