@@ -1,4 +1,9 @@
 <?php
+
+    if(!isset($_SESSION["idUsuario"])){
+        header("location:index.php");
+    }
+    
     class userSession{
         public function __construct(){
             session_start();
