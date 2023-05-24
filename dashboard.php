@@ -7,6 +7,15 @@
 
   $idUsuario = $_SESSION["idUsuario"];
 
+  $veces = $instCon->getFrecuenciaEmocion($idUsuario);
+  $veces = $veces->fetch_assoc();
+  $instCon->cerrar();
+
+  $instCon = new Conexion();
+
+  $datosDashboard = $instCon->datosDashboard($idUsuario);
+  $dashboardUsuario = $datosDashboard->fetch_assoc();
+
   $instCon->cerrar();
 
 ?>
@@ -86,7 +95,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                        Sin definir
+                        <?=$dashboardUsuario["actiAgreg"]?>
                       </h6>
                     </div>
                   </div>
@@ -107,7 +116,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                      Sin definir
+                      <?=$dashboardUsuario["actiCompl"]?>
                       </h6>
                     </div>
                   </div>
@@ -127,7 +136,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                        Sin definir
+                      <?=$dashboardUsuario["actiModif"]?>
                       </h6>
                     </div>
                   </div>
@@ -149,7 +158,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                        Sin definir
+                      <?=$dashboardUsuario["etiqAgreg"]?>
                       </h6>
                     </div>
                   </div>
@@ -170,7 +179,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                        Sin definir
+                      <?=$dashboardUsuario["entrAgreg"]?>
                       </h6>
                     </div>
                   </div>
@@ -227,35 +236,35 @@
                         show: false
                       },
                       data: [{
-                          value: 1,
+                          value: <?=$veces["frecnull"]?>,
                           name: 'N/A'
                         },
                         {
-                          value: 2,
+                          value: <?=$veces["frec1"]?>,
                           name: 'Feliz'
                         },
                         {
-                          value: 3,
+                          value: <?=$veces["frec2"]?>,
                           name: 'Triste'
                         },
                         {
-                          value: 4,
+                          value: <?=$veces["frec3"]?>,
                           name: 'Enojado'
                         },
                         {
-                          value: 5,
+                          value: <?=$veces["frec4"]?>,
                           name: 'Sorprendido'
                         },
                         {
-                          value: 6,
+                          value: <?=$veces["frec5"]?>,
                           name: 'Emocionado'
                         },
                         {
-                          value: 7,
+                          value: <?=$veces["frec6"]?>,
                           name: 'Confundido'
                         },
                         {
-                          value: 8,
+                          value: <?=$veces["frec7"]?>,
                           name: 'Nervioso'
                         },
                       ]
